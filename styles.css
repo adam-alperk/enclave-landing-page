@@ -42,8 +42,8 @@ body {
   width: 300vw;
   height: 50vh;
   align-items: center;
-  /* transition: opacity 1s ease-in-out; */
-  animation: slide 15s infinite ease-in-out;
+  transition: transform 1s ease-in-out;
+  /* animation: slide 15s infinite ease-in-out; */
 }
 
 .slide {
@@ -70,6 +70,30 @@ body {
   object-fit: cover;
   flex-shrink: 0;
   /* transition: opacity 1s ease-in-out; */
+}
+
+.arrow {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5); /* Background color for the arrow */
+  color: white;
+  border: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  /* border-radius: 50%; */
+  z-index: 1;
+}
+
+.left-arrow {
+  left: 0px;
+}
+
+.right-arrow {
+  right: 0px;
 }
 
 .contact-section {
@@ -180,15 +204,15 @@ body {
 }
 
 .tick {
-  display: flex; /* Center the tick symbol */
-  color: white; /* Color of the tick symbol */
+  display: flex;
+  color: white;
   font-family: "Courier New", Courier, monospace;
-  font-size: 1.2rem; /* Adjust the size of the tick symbol */
+  font-size: 1.2rem;
   background-image: linear-gradient(to right, #1ba3df, #4cb863);
-  width: 24px; /* Diameter of the circle */
-  height: 24px; /* Diameter of the circle */
-  border-radius: 50%; /* Make the background circular */
-  align-items: center; /* Center vertically */
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  align-items: center;
   justify-content: center;
 }
 
@@ -196,7 +220,7 @@ body {
   margin: 10px 10px;
 }
 
-@keyframes slide {
+/* @keyframes slide {
   0% {
     transform: translateX(0vw);
   }
@@ -221,4 +245,4 @@ body {
   100% {
     transform: translateX(0vw);
   }
-}
+} */

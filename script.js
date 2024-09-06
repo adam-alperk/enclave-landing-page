@@ -1,15 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
   const sliderCard = document.querySelector(".slider-card");
+  const slides = document.querySelectorAll(".slide");
+  const totalSlides = slides.length;
+  let currentIndex = 0;
 
-  // Listen for when the animation ends
-  sliderCard.addEventListener("animationiteration", function () {
-    sliderCard.style.animation = "none"; // Stop the animation
-    sliderCard.style.transform = "translateX(0%)"; // Reset to the first image position
+  function updateSlidePosition() {
+    const offset = -currentIndex * 100;
+    sliderCard.style.transform = `translateX(${offset}vw)`;
+  }
 
-    // Force a reflow to ensure the animation restarts
-    sliderCard.offsetHeight; // Trigger reflow
+  function showNextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlidePosition();
+  }
 
-    // Restart the animation after resetting position
-    sliderCard.style.animation = "slide 15s infinite ease-in-out";
+  function showPreviousSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+  }
+
+  // Attach event listeners to the arrows
+  document.querySelector(".right-arrow").addEventListener("click", () => {
+    console.log("Right arrow clicked");
+    showNextSlide();
   });
+
+  document.querySelector(".left-arrow").addEventListener("click", () => {
+    console.log("Left arrow clicked");
+    showPreviousSlide();
+  });
+
+  // Optional: Auto-slide functionality
+  setInterval(showNextSlide, 5000); // Change slide every 5 seconds
 });
