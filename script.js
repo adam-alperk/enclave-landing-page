@@ -7,8 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const listDots = document.querySelectorAll(".list-dot");
   const totalSlides = slides.length;
   const totalListings = listingImages.length;
-  const adjuster = ((totalSlides - 1) * 100) / 2;
-  const listingAdjuster = ((totalListings - 1) * 30) / 2;
+
+  const slideWidth = 100;
+  // const listingWidth = 30;
+  let listingWidth = window.innerWidth < 1270 ? 80 : 30;
+
+  const adjuster = ((totalSlides - 1) * slideWidth) / 2;
+  const listingAdjuster = ((totalListings - 1) * listingWidth) / 2;
+
   let currentIndex = 0;
   let listingIndex = 0;
   let startX = 0;
@@ -18,13 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
   listingsCard.style.transform = `translateX(${listingAdjuster}vw)`;
 
   function updateSlidePosition() {
-    const offset = -currentIndex * 100 + adjuster;
+    const offset = -currentIndex * slideWidth + adjuster;
     sliderCard.style.transform = `translateX(${offset}vw)`;
     updateDots(); // Update dots each time the slide position changes
   }
 
   function updateListingsPosition() {
-    const listOffset = -listingIndex * 30 + listingAdjuster; // Adjust the width if necessary
+    const listOffset = -listingIndex * listingWidth + listingAdjuster; // Adjust the width if necessary
     listingsCard.style.transform = `translateX(${listOffset}vw)`;
     updateListDots();
   }
