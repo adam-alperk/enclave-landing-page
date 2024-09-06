@@ -12,28 +12,34 @@ body {
 
 .header-bar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px;
   background-color: #fff;
   color: #333;
+  box-shadow: 10px 0px 20px #000000;
+  z-index: 5;
 }
 
 .welcome-text {
   /* font-style: Montserrat; */
   font-weight: 800;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   margin: 5px;
+  margin-right: 20px;
 }
 
 .brand-logo {
-  height: 2rem;
+  height: 3rem;
 }
 
 .image-slider {
+  display: flex;
   width: 100%;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
 .slider-card {
@@ -96,6 +102,30 @@ body {
   right: 0px;
 }
 
+.dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 48%;
+  background-color: #00000049;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
 .contact-section {
   display: flex;
   padding: 5vw;
@@ -112,7 +142,7 @@ body {
   margin-bottom: 10px;
 }
 
-.left-items-container {
+.listings-container {
   display: flex;
   flex-direction: column;
   width: 30vw;
@@ -123,7 +153,7 @@ body {
   margin-right: 30px;
 }
 
-.left-image {
+.listings-image {
   width: inherit;
   height: auto;
 }
