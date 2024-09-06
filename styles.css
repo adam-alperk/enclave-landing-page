@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+}
+
+.welcome-text {
+  font-style: Montserrat;
+  font-weight: 800;
+  font-size: 0.6rem;
+  margin: 5px;
+}
+
+.brand-logo {
+  height: 25px;
+}
+
+.image-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-card {
+  display: flex;
+  position: relative;
+  width: 300vw;
+  height: 40vh;
+  /* transition: opacity 1s ease-in-out; */
+  animation: slide-a 15s infinite ease-in-out;
+}
+
+.slide-image {
+  width: 100vw;
+  object-fit: cover;
+  flex-shrink: 0;
+  /* transition: opacity 1s ease-in-out; */
+}
+
+.contact-section {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+}
+
+.contact-image {
+  width: 50%;
+  height: auto;
+}
+
+.contact-form {
+  width: 50%;
+  padding: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.why-choose-us {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.why-choose-us ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.why-choose-us ul li {
+  margin: 10px 0;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0vw);
+  }
+  25% {
+    transform: translateX(0vw);
+  }
+  30% {
+    transform: translateX(-100vw);
+  }
+  55% {
+    transform: translateX(-100vw);
+  }
+  60% {
+    transform: translateX(-200vw);
+  }
+  85% {
+    transform: translateX(-200vw);
+  }
+  90% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
