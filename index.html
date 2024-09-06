@@ -20,34 +20,79 @@
 
     <section class="image-slider">
       <div class="slider-card">
-        <img src="assets/slide-image-1.jpg" class="slide-image" />
-        <img src="assets/slide-image-2.jpg" class="slide-image" />
-        <img src="assets/slide-image-3.jpg" class="slide-image" />
+        <div class="slide">
+          <img src="assets/slide-image-1.jpg" class="slide-image" />
+          <div class="slide-text">PLACEHOLDER TEXT FOR IMAGE</div>
+        </div>
+        <div class="slide">
+          <img src="assets/slide-image-2.jpg" class="slide-image" />
+          <div class="slide-text">PLACEHOLDER TEXT FOR IMAGE</div>
+        </div>
+        <div class="slide">
+          <img src="assets/slide-image-3.jpg" class="slide-image" />
+          <div class="slide-text">PLACEHOLDER TEXT FOR IMAGE</div>
+        </div>
       </div>
     </section>
 
     <section class="contact-section">
-      <img src="contact-image.jpg" alt="Contact Image" class="contact-image" />
-      <form class="contact-form">
-        <h2>Let's Talk</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        <label for="contact">Contact No.:</label>
-        <input type="text" id="contact" name="contact" required />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+      <div class="left-items-container">
+        <h2>A GLIMPSE AT OUR LISTINGS</h2>
+        <img
+          src="assets/slide-image-1.jpg"
+          alt="Contact Image"
+          class="left-image"
+        />
+      </div>
+      <div class="contact-form">
+        <h2 class="lets-talk">LET'S TALK</h2>
+        <!-- <label for="name">Name:</label> -->
+        <input type="text" id="name" name="name" placeholder="Name:" required />
+        <!-- <label for="contact">Contact No.:</label> -->
+        <input
+          type="text"
+          id="contact"
+          name="contact"
+          placeholder="Contact No:"
+          required
+        />
+        <!-- <label for="email">Email:</label> -->
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email:"
+          required
+        />
         <button type="submit">Enquire Now</button>
-      </form>
+      </div>
     </section>
 
     <section class="why-choose-us">
-      <h2>Why choose our brand</h2>
-      <ul>
-        <li>Point 1</li>
-        <li>Point 2</li>
-        <li>Point 3</li>
-        <li>Point 4</li>
-      </ul>
+      <div class="why-choose-us-text-container">
+        <h2>WHY CHOOSE ENCLAVE</h2>
+      </div>
+      <div class="list">
+        <div class="list-row">
+          <p class="tick">✓</p>
+          <p>India's first Real Esatate Advisory firm focused only on NRIs</p>
+        </div>
+        <div class="list-row">
+          <p class="tick">✓</p>
+          <p>Specially curated residential & commercial projects</p>
+        </div>
+        <div class="list-row">
+          <p class="tick">✓</p>
+          <p>AI-powered technology for tailormade portfolio recommendations</p>
+        </div>
+        <div class="list-row">
+          <p class="tick">✓</p>
+          <p>
+            Proprietary 3-way Face-to-Face video consultations & site
+            walkthroughs
+          </p>
+        </div>
+      </div>
     </section>
 
     <script src="script.js"></script>

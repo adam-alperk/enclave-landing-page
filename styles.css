@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+* {
+  font-family: "Montserrat";
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,14 +21,14 @@ body {
 }
 
 .welcome-text {
-  font-style: Montserrat;
+  /* font-style: Montserrat; */
   font-weight: 800;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   margin: 5px;
 }
 
 .brand-logo {
-  height: 25px;
+  height: 2rem;
 }
 
 .image-slider {
@@ -37,9 +40,29 @@ body {
   display: flex;
   position: relative;
   width: 300vw;
-  height: 40vh;
+  height: 50vh;
+  align-items: center;
   /* transition: opacity 1s ease-in-out; */
-  animation: slide-a 15s infinite ease-in-out;
+  animation: slide 15s infinite ease-in-out;
+}
+
+.slide {
+  position: relative;
+  width: 100vw;
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 45%;
+  left: 100px;
+  color: white;
+  /* font-style: Montserrat; */
+  font-weight: 800;
+  font-size: 3.5rem;
+  word-spacing: 1rem;
+  text-shadow: black 1px 0 20px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .slide-image {
@@ -51,18 +74,47 @@ body {
 
 .contact-section {
   display: flex;
-  padding: 20px;
+  padding: 5vw;
+  padding-top: 10px;
+  justify-content: center;
   align-items: center;
 }
 
-.contact-image {
-  width: 50%;
+.lets-talk {
+  display: flex;
+  font-size: 2.5rem;
+  align-self: center;
+  /* top: 20px !important; */
+  margin-bottom: 10px;
+}
+
+.left-items-container {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 28vw;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.left-image {
+  width: inherit;
   height: auto;
 }
 
 .contact-form {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 20vw;
   padding: 20px;
+  padding-bottom: 40px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+  box-shadow: 0px 0px 20px #00000033;
+  justify-content: center;
 }
 
 .contact-form label {
@@ -71,31 +123,77 @@ body {
 }
 
 .contact-form input {
-  width: 100%;
+  width: 95%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 20px 10px;
+  align-self: center;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .contact-form button {
   padding: 10px 20px;
-  background-color: #333;
+  margin: 30px 10px;
+  width: 200px;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #1ba3df;
   color: white;
   border: none;
   cursor: pointer;
+  align-self: center;
 }
 
 .why-choose-us {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
   background-color: #f4f4f4;
 }
 
-.why-choose-us ul {
-  list-style-type: none;
-  padding: 0;
+.why-choose-us-text-container {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right, #1ba3df, #4cb863);
 }
 
-.why-choose-us ul li {
-  margin: 10px 0;
+.why-choose-us h2 {
+  font-weight: 800;
+  font-size: 7rem;
+  align-self: center;
+  color: #ffffff55;
+  margin: 0px !important;
+}
+
+.list {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  list-style-type: none;
+  padding: 0;
+  align-self: center;
+}
+
+.list-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.tick {
+  display: flex; /* Center the tick symbol */
+  color: white; /* Color of the tick symbol */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem; /* Adjust the size of the tick symbol */
+  background-image: linear-gradient(to right, #1ba3df, #4cb863);
+  width: 24px; /* Diameter of the circle */
+  height: 24px; /* Diameter of the circle */
+  border-radius: 50%; /* Make the background circular */
+  align-items: center; /* Center vertically */
+  justify-content: center;
+}
+
+.list p {
+  margin: 10px 10px;
 }
 
 @keyframes slide {
