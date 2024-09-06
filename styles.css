@@ -75,7 +75,6 @@ body {
   width: 100vw;
   object-fit: cover;
   flex-shrink: 0;
-  /* transition: opacity 1s ease-in-out; */
 }
 
 .arrow {
@@ -123,7 +122,31 @@ body {
 }
 
 .dot.active {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: white;
+}
+
+.list-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  background-color: #00000049;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.list-dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.list-dot.active {
+  background-color: white;
 }
 
 .contact-section {
@@ -153,9 +176,43 @@ body {
   margin-right: 30px;
 }
 
+.listings-card {
+  display: flex;
+  position: relative;
+  width: 90vw;
+  height: 20vw;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: center;
+  transition: transform 1s ease-in-out;
+}
+
+.listings-image-container {
+  display: flex;
+  position: relative;
+  /* width:30vw; */
+  height: inherit;
+  transition: transform 1s ease-in-out;
+}
+
 .listings-image {
-  width: inherit;
-  height: auto;
+  position: relative;
+  /* width: 30vw; */
+  height: inherit;
+  transition: transform 1s ease-in-out;
+}
+
+.listings-text {
+  display: flex;
+  position: absolute;
+  height: inherit;
+  width: 30vw;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  background-color: #24739555;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-form {
