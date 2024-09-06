@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sliderCard = document.querySelector(".slider-card");
   const slides = document.querySelectorAll(".slide");
   const listingsCard = document.querySelector(".listings-card");
-  const listingImages = document.querySelectorAll(".listings-image-container"); // Select all listings images
+  const listingImages = document.querySelectorAll(".listings-image-container");
   const dots = document.querySelectorAll(".dot");
   const listDots = document.querySelectorAll(".list-dot");
   const totalSlides = slides.length;
@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const listingAdjuster = ((totalListings - 1) * 30) / 2;
   let currentIndex = 0;
   let listingIndex = 0;
+  let startX = 0;
+  let endX = 0;
 
   sliderCard.style.transform = `translateX(${adjuster}vw)`;
   listingsCard.style.transform = `translateX(${listingAdjuster}vw)`;
@@ -54,6 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
     updateListingsPosition();
   }
 
+  function showPreviousListing() {
+    listingIndex = (listingIndex - 1 + totalListings) % totalListings;
+    updateListingsPosition();
+  }
+
   // Attach event listeners to the arrows
   document.querySelector(".right-arrow").addEventListener("click", () => {
     console.log("Right arrow clicked");
@@ -78,6 +85,25 @@ document.addEventListener("DOMContentLoaded", function () {
       listingIndex = index;
       updateListingsPosition();
     });
+  });
+
+  // Swipe functionality for mobile devices
+  listingsCard.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  listingsCard.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+  });
+
+  listingsCard.addEventListener("touchend", () => {
+    if (startX > endX + 50) {
+      // Swipe left (next listing)
+      showNextListing();
+    } else if (startX < endX - 50) {
+      // Swipe right (previous listing)
+      showPreviousListing();
+    }
   });
 
   // Optional: Auto-slide functionality
