@@ -29,7 +29,6 @@ body {
 }
 
 .welcome-text {
-  /* font-style: Montserrat; */
   font-weight: 800;
   font-size: 1.5rem;
   margin: 5px;
@@ -42,6 +41,7 @@ body {
 
 .image-slider {
   display: flex;
+  position: relative;
   width: 100%;
   overflow: hidden;
   align-items: center;
@@ -52,10 +52,8 @@ body {
   display: flex;
   position: relative;
   width: 300vw;
-  height: 50vh;
   align-items: center;
-  transition: transform 1s ease-in-out;
-  /* animation: slide 15s infinite ease-in-out; */
+  transition: transform 0.5s ease-in-out;
 }
 
 .slide {
@@ -68,7 +66,6 @@ body {
   bottom: 45%;
   left: 100px;
   color: white;
-  /* font-style: Montserrat; */
   font-weight: 800;
   font-size: 3.5rem;
   word-spacing: 1rem;
@@ -84,9 +81,10 @@ body {
 }
 
 .arrow {
+  display: flex;
   position: absolute;
-  top: 22%;
-  /* transform: translateY(-50%); */
+  justify-content: center;
+  align-items: center;
   background: rgba(0, 0, 0, 0.5); /* Background color for the arrow */
   color: white;
   border: none;
@@ -96,7 +94,6 @@ body {
   cursor: pointer;
   padding: 10px;
   height: 200px;
-  /* border-radius: 50%; */
   z-index: 1;
 }
 
@@ -112,7 +109,8 @@ body {
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 53%;
+  /* top: 75%; */
+  bottom: 20px;
   background-color: #00000049;
   padding: 5px;
   border-radius: 20px;
@@ -169,8 +167,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 30vw;
-  min-width: 300px;
-  height: 400px;
+  min-width: 450px;
+  height: 450px;
   padding: 20px;
   padding-bottom: 40px;
   margin-left: 30px;
@@ -181,11 +179,36 @@ body {
 
 .contact-form label {
   display: block;
-  margin: 10px 0 5px;
+  margin: 10px 0px 0px 12px;
 }
 
+.contact-row,
 .contact-form select,
+.input-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 3px;
+  /* padding-top: 0px; */
+  /* padding-bottom: 0px; */
+}
+
+#countryCodes {
+  width: 30%;
+}
+
 .contact-form input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 10px;
+  align-self: center;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.contact-form select {
   width: 95%;
   padding: 10px;
   margin: 10px 10px;
@@ -222,11 +245,16 @@ body {
   flex-direction: column;
   width: var(--listing-width);
   min-width: 300px;
-  height: 460px;
+  max-width: 700px;
+  height: 500px;
   overflow: hidden;
   justify-content: center;
   align-items: center;
   margin-right: 30px;
+}
+
+.listings-container h2 {
+  text-align: center;
 }
 
 .listings-card {
@@ -266,7 +294,12 @@ body {
   /* font-weight: 600; */
   /* font-size: 1rem; */
   color: white;
-  background-color: #1f516755;
+  /* background-color: #1f516755; */
+  background: linear-gradient(
+    180deg,
+    rgba(31, 81, 103, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
   justify-content: center;
   align-items: center;
 }
@@ -352,8 +385,8 @@ body {
   .listings-container {
     margin: 10px 0px;
     margin-top: -30px;
-    width: var(--listing-width-more) !important;
-    min-width: 0;
+    width: 60vw;
+    min-width: 450px;
     justify-content: center;
   }
   .listings-card {
@@ -371,6 +404,7 @@ body {
   .contact-form {
     margin: 10px 0px;
     width: 50vw;
+    height: auto;
   }
   .why-choose-us h2 {
     font-size: 6vw;
@@ -378,46 +412,56 @@ body {
 }
 
 @media screen and (max-width: 1040px) {
-  .slider-card {
-    height: 25vh;
-  }
   .slide-image {
-    width: 120vw;
-    /* height: inherit; */
+    width: 100vw;
   }
   .arrow {
-    top: 10%;
-    height: 15vh;
+    font-size: 2rem;
+    height: 7vh;
   }
   .why-choose-us h2 {
     font-size: 3rem;
     text-align: center;
   }
-  .dots {
-    top: 28%;
-  }
 }
 
 @media screen and (max-width: 530px) {
+  .slide-image {
+    height: 25vh;
+    width: auto;
+  }
   .welcome-text {
     font-size: 1.2rem;
   }
   .brand-logo {
     height: 2.5rem;
   }
-  .slider-card {
-    height: 20vh;
-  }
+  /* .slider-card { */
+  /*   height: 20vh; */
+  /* } */
   .arrow {
-    top: 12%;
-    font-size: 2.5rem;
+    font-size: 1.3rem;
   }
+
+  .listings-container {
+    min-width: 300px;
+  }
+
   .listings-row h2,
   .listings-row p {
     font-size: 0.9rem;
     padding: 1px;
   }
-  .dots {
-    top: 23%;
+  .contact-form {
+    width: 75vw;
+    min-width: 300px;
+  }
+
+  .input-row,
+  .contact-row {
+    flex-direction: column;
+  }
+  #countryCodes {
+    width: auto;
   }
 }

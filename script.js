@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const listingsCard = document.querySelector(".listings-card");
   const listingImages = document.querySelectorAll(".listings-image-container");
   const dots = document.querySelectorAll(".dot");
+  const dotGroup = document.querySelector(".dots");
   const listDots = document.querySelectorAll(".list-dot");
   const totalSlides = slides.length;
   const totalListings = listingImages.length;
@@ -113,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Optional: Auto-slide functionality
-  setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+  // setInterval(showNextSlide, 5000); // Change slide every 5 seconds
   setInterval(showNextListing, 5000);
 
   // Initialize dots
