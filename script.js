@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateDots();
   updateListDots();
 
-  // Form submission
+  // Form integration with API
 
   const form = document.getElementById("enquiryForm");
 
@@ -146,9 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const adGroup = urlParams.get("Adgroup") || "";
     const url = window.location.href || "";
 
+    // Detect device type
     const userAgent = navigator.userAgent.toLowerCase();
     let device = "Unknown";
-
     if (/android/i.test(userAgent)) {
       device = "Android";
     } else if (/ipad|iphone|ipod/.test(userAgent) && !window.MSStream) {
@@ -204,22 +204,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const accessToken = loginResult.access_token;
       const instanceUrl = loginResult.instance_url;
 
+      // Console logging for debugging
       console.log("Access Token:", accessToken);
       console.log("Instance URL:", instanceUrl);
 
-      // Send form data to Create Lead API
+      // Prepare Lead Data for Create Lead API
       const leadData = {
         req: {
-          firstName: formData.firstName, // Replace with actual values
+          firstName: formData.firstName,
           lastName: formData.lastName,
           mobile: formData.contact,
           email: formData.email,
-          budget: "90Lakh",
+          budget: "Budget",
           configuration: formData.preference,
           countryCode: formData.countryCode,
           countryName: formData.residence,
           url: url,
-          remarks: "divatest",
+          remarks: "Remarks",
           UTM_Medium: utmMedium,
           UTM_Source: utmSource,
           utm_sub_source: utmSubSource,
@@ -235,6 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       };
 
+      // Send form data to Create Lead API
       const leadResponse = await fetch(
         `${instanceUrl}/services/apexrest/CreateLead/`,
         {
@@ -254,6 +256,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const leadResult = await leadResponse.json();
       console.log("Lead created successfully:", leadResult);
       alert("Form submitted successfully!");
+
+      // Redirect after successful form submission
+      window.location.href = "https://enclaveadvisory.com/thank-you/";
     } catch (error) {
       console.error("Error:", error);
       alert("Form submission failed. Please try again.");
